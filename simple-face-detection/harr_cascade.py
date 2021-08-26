@@ -2,7 +2,7 @@ import numpy as np
 import cv2
 
 # pretrained cascade model 
-cascade_path = 'sources/haarcascade_frontalface_default.xml'
+cascade_path = '..\sources\haarcascade_frontalface_default.xml'
 
 # create haar cascade  
 face_classifier = cv2.CascadeClassifier(cascade_path)
@@ -30,7 +30,7 @@ while (cap.isOpened()):
         gray, 
         scaleFactor = 1.2, 
         minNeighbors = 5, 
-        minSize = (30, 30),
+        minSize = (30, 30)
     )
 
     # draw rectangle & text when detected face 
