@@ -20,10 +20,12 @@ def plotImg(source, output, title_output, title_original="Source"):
     plt.imshow(cv2.cvtColor(output, cv2.COLOR_BGR2RGB))
     plt.show()
 
-# mean filtering 
+# mean filtering
 mean_kernel = np.ones((5,5))/25
+mean_kernel_2 = np.ones((3,3))/9
 filtered_lena = cv2.filter2D(noise_lena, ddepth = -1, kernel = mean_kernel)# filter2D does convolution between source and kernel 
-plotImg(noise_lena, filtered_lena, "Mean Filter")
+filtered_lena_2 = cv2.filter2D(noise_lena, ddepth = -1, kernel = mean_kernel_2)
+plotImg(filtered_lena_2, filtered_lena, "Mean Filter")
 
 # gaussian blur 
 gaussian_lena = cv2.GaussianBlur(noise_lena, (5, 5), sigmaX=4, sigmaY=4)
